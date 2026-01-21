@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-e$hr8m&fp+3uyshzs@y9n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*').split(',')
 
 
 # Application definition
@@ -109,6 +109,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Configuración de CORS
+CORS_ALLOW_ALL_ORIGINS = config('CORS_ALLOW_ALL_ORIGINS', default=True, cast=bool)
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",  # Angular
     "http://localhost:5173",  # React (Vite)
