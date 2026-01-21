@@ -30,6 +30,15 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS_STR = config('ALLOWED_HOSTS', default='*')
 ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS_STR.split(',')] if ALLOWED_HOSTS_STR != '*' else ['*']
 
+# Configuración de seguridad para Railway
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.railway.app',
+    'https://*.up.railway.app',
+]
+
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # Application definition
 
