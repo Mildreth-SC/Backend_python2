@@ -122,12 +122,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Configuración de CORS
 CORS_ALLOW_ALL_ORIGINS = config('CORS_ALLOW_ALL_ORIGINS', default=True, cast=bool)
 
-# Orígenes permitidos específicos (cuando CORS_ALLOW_ALL_ORIGINS = False)
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",  # Angular
     "http://localhost:5173",  # React (Vite)
-    "http://localhost:3000",  # React dev
-    "https://*.vercel.app",  # Vercel deployments
 ]
 
 CORS_ALLOW_CREDENTIALS = True
